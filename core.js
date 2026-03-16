@@ -29,7 +29,7 @@
       const opts=shuffle([rounds[idx].pt,...shuffle(DATA.filter(d=>d.pt!==rounds[idx].pt)).slice(0,2).map(d=>d.pt)]);
       opts.forEach(o=>{
         const div=document.createElement('div');
-        div.className = 'choice-card bg-white border-2 border-gray-200 rounded-lg p-4 cursor-pointer hover:border-purple-400 transition-all duration-300';
+        div.className = 'choice-card bg-gray-800 border-2 border-gray-600 rounded-lg p-4 cursor-pointer hover:border-gray-500 transition-all duration-300';
         div.textContent=o;
         div.onclick=()=>select(div,o);
         choices.appendChild(div);
@@ -43,16 +43,16 @@
       });
       
       if(val===rounds[idx].pt){
-        div.classList.remove('border-gray-200');
+        div.classList.remove('border-gray-600');
         div.classList.add('correct', 'border-green-500');
         score++;
       } else {
-        div.classList.remove('border-gray-200');
+        div.classList.remove('border-gray-600');
         div.classList.add('incorrect', 'border-red-500');
         // Show correct answer
         [...choices.children].forEach(c=>{
           if(c.textContent===rounds[idx].pt){
-            c.classList.remove('border-gray-200');
+            c.classList.remove('border-gray-600');
             c.classList.add('correct', 'border-green-500');
           }
         });
