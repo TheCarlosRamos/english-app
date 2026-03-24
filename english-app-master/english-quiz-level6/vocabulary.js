@@ -86,4 +86,14 @@ QuizCore.createGame([
         {"en": "Goal", "pt": "Meta"}, 
         {"en": "Attainable", "pt": "Atingível"}, 
         {"en": "Boost", "pt": "Impulso"}, 
-        {"en": "Income", "pt": "Rendimento"}]); 
+        {"en": "Income", "pt": "Rendimento"},
+        {"en": "Versatile", "pt": "Versátil"},
+        {"en": "Consumerism", "pt": "Consumismo"},
+        {"en": "Phony", "pt": "Falso"},
+        {"en": "Counterfeit", "pt": "Falso"},
+        {"en": "Lifelong search", "pt": "Busca ao longo da vida"},
+        {"en": "Subtle", "pt": "Sutil"},
+        {"en": "Traits", "pt": "Características"},
+        {"en": "Broad", "pt": "Amplo"},
+        {"en": "Ever-increasingly", "pt": "Cada vez mais"},
+        {"en": "Painstakingly", "pt": "Meticulosamente"}]); 

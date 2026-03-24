@@ -67,5 +67,14 @@ QuizCore.createGame([
     {"en": "A bird in the hand is worth two in the bush", "pt": "Melhor um na mão do que dois voando"}, 
     {"en": "To be up to", "pt": "Tramar"}, 
     {"en": "It's no use crying over split milk", "pt": "Não adianta chorar pelo leite derramado."}, 
-    {"en": "Burn the midnight oil", "pt": "Ficar acordado até tarde"}, 
-    {"en": "Rome was not built in one day", "pt": "Roma não foi construída em um dia"}]);  
+    {"en": "Burn the midnight oil", "pt": "Trabalhar até tarde"}, 
+    {"en": "Rome was not built in one day", "pt": "Roma não foi construída em um dia"},
+    {"en": "Have your heart set", "pt": "Estar com o coração decidido"},
+    {"en": "Kill two birds with one stone", "pt": "Matar dois coelhos com uma cajadada só"},
+    {"en": "Size up", "pt": "Examinar"},
+    {"en": "Has its roots", "pt": "Tem suas origens"},
+    {"en": "Bear in mind", "pt": "Ter em mente"},
+    {"en": "Don't bite more than you can chew;", "pt": "Não morda mais do que você consegue mastigar"},
+    {"en": "Tap into", "pt": "Aproveitar"},
+    {"en": "A watched pot never boils", "pt": "Panela vigiada nunca ferve"}]);
+    

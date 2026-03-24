@@ -54,4 +54,7 @@ QuizCore.createGame([
     {"en": "To handle", "pt": "Lidar"}, 
     {"en": "To Overwhelm", "pt": "Sobrecarregar"}, 
     {"en": "To set free", "pt": "Libertar"}, 
-    {"en": "To cope with", "pt": "Lidar"}]);
+    {"en": "To cope with", "pt": "Lidar"},
+    {"en": "To stage", "pt": "Encenar"},
+    {"en": "To persue", "pt": "Perseguir"}]);
+    
