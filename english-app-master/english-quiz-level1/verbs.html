@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbs - English Quiz Level 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .dark-bg {
+            background: #0f0f0f;
+        }
+        .choice-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .choice-card:hover:not(.selected) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        .choice-card.correct {
+            background: #1a3d1a;
+            border-color: #22c55e;
+            color: white;
+        }
+        .choice-card.incorrect {
+            background: #3d1a1a;
+            border-color: #ef4444;
+            color: white;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen dark-bg text-white">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 border-b border-gray-700">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-300 font-semibold text-lg hover:text-white transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Menu
+                </a>
+                <h1 class="text-2xl font-bold text-white">
+                    <i class="fas fa-running mr-2 text-purple-400"></i>Verbs
+                </h1>
+                <div class="text-purple-400 font-semibold">Level 1</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="bg-gray-800 h-2">
+        <div id="progress-bar" class="h-full bg-purple-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Start Screen -->
+        <div id="start" class="max-w-2xl mx-auto text-center fade-in">
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                <i class="fas fa-running text-6xl text-purple-400 mb-6"></i>
+                <h2 class="text-3xl font-bold text-white mb-4">Verbs Quiz</h2>
+                <p class="text-gray-300 mb-8">Test your knowledge of essential English verbs. Choose the correct Portuguese translation for each verb.</p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-8 text-left">
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="font-semibold text-purple-400 mb-2">Quiz Details</h3>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>10 questions</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Multiple choice</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Instant feedback</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="font-semibold text-purple-400 mb-2">What You'll Learn</h3>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li><i class="fas fa-running mr-2 text-blue-400"></i>Action verbs</li>
+                            <li><i class="fas fa-users mr-2 text-blue-400"></i>Daily activities</li>
+                            <li><i class="fas fa-heart mr-2 text-blue-400"></i>Common expressions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button id="begin" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-play mr-2"></i>Start Quiz
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz" class="max-w-2xl mx-auto hidden">
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                <!-- Question Header -->
+                <div class="flex justify-between items-center mb-6">
+                    <div class="text-gray-300">
+                        Question <span id="current-question" class="text-purple-400 font-bold">1</span> of 10
+                    </div>
+                    <div class="text-gray-300">
+                        Score: <span id="score" class="text-purple-400 font-bold">0</span>
+                    </div>
+                </div>
+
+                <!-- Question -->
+                <div class="text-center mb-8">
+                    <div class="bg-gray-800 rounded-xl p-6 mb-6">
+                        <p class="text-gray-400 text-sm mb-2">Translate this English verb:</p>
+                        <h3 id="term" class="text-3xl font-bold text-white"></h3>
+                    </div>
+                </div>
+
+                <!-- Choices -->
+                <div id="choices" class="grid gap-3">
+                    <!-- Choices will be generated here -->
+                </div>
+
+                <!-- Next Button -->
+                <div class="mt-8 text-center">
+                    <button id="next" disabled class="bg-gray-700 text-gray-400 font-bold py-3 px-8 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Next Question <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end" class="max-w-2xl mx-auto text-center hidden">
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                <i class="fas fa-trophy text-6xl text-yellow-400 mb-6"></i>
+                <h2 class="text-3xl font-bold text-white mb-4">Quiz Complete!</h2>
+                <div class="text-5xl font-bold text-purple-400 mb-6">
+                    <span id="final">0</span>/10
+                </div>
+                <p class="text-gray-300 mb-8">Great job! You've completed the verbs quiz.</p>
+                
+                <div class="space-y-4">
+                    <a href="verbs.html" class="block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        <i class="fas fa-redo mr-2"></i>Try Again
+                    </a>
+                    <a href="index.html" class="block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        <i class="fas fa-home mr-2"></i>Back to Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../english-quiz-level6/core.js"></script>
+    <script src="verbs.js"></script>
+</body>
+</html>
