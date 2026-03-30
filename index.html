@@ -32,6 +32,12 @@
         .level-gradient-1 {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+        .level-gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .level-gradient-4 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
         .level-gradient-6 {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
@@ -53,7 +59,7 @@
 
         <!-- Main Content -->
         <main class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                 <!-- Level 1 Card -->
                 <div class="card-hover dark-card rounded-2xl shadow-xl overflow-hidden">
                     <div class="level-gradient-1 p-8 text-center">
@@ -79,6 +85,64 @@
                         </div>
                         <a href="english-quiz-level1/index.html" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block text-center mt-6">
                             <i class="fas fa-play mr-2"></i>Start Learning
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Level 3 Card -->
+                <div class="card-hover dark-card rounded-2xl shadow-xl overflow-hidden">
+                    <div class="level-gradient-3 p-8 text-center">
+                        <i class="fas fa-star text-6xl text-white"></i>
+                        <h2 class="text-3xl font-bold text-white mt-4">Level 3</h2>
+                        <p class="text-blue-100 mt-2">Intermediate</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-dim mb-6">Build your skills with intermediate content</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-book mr-3 text-blue-400"></i>
+                                <span>Essential Vocabulary</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-running mr-3 text-blue-400"></i>
+                                <span>Common Verbs</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-comments mr-3 text-blue-400"></i>
+                                <span>Everyday Expressions</span>
+                            </div>
+                        </div>
+                        <a href="english-quiz-level3/index.html" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block text-center mt-6">
+                            <i class="fas fa-play mr-2"></i>Start Practice
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Level 4 Card -->
+                <div class="card-hover dark-card rounded-2xl shadow-xl overflow-hidden">
+                    <div class="level-gradient-4 p-8 text-center">
+                        <i class="fas fa-rocket text-6xl text-white"></i>
+                        <h2 class="text-3xl font-bold text-white mt-4">Level 4</h2>
+                        <p class="text-pink-100 mt-2">Upper Intermediate</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-dim mb-6">Challenge yourself with focused content</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-book mr-3 text-yellow-400"></i>
+                                <span>Key Vocabulary</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-running mr-3 text-yellow-400"></i>
+                                <span>Essential Verbs</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-comments mr-3 text-yellow-400"></i>
+                                <span>Useful Expressions</span>
+                            </div>
+                        </div>
+                        <a href="english-quiz-level4/index.html" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block text-center mt-6">
+                            <i class="fas fa-play mr-2"></i>Start Challenge
                         </a>
                     </div>
                 </div>
@@ -145,21 +209,23 @@
             <!-- Instructions Section -->
             <div class="mt-12 dark-card rounded-2xl p-8">
                 <h3 class="text-2xl font-bold text-center mb-6">How to Use</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div>
-                        <i class="fas fa-layer-group text-3xl mb-3 text-gray-400"></i>
-                        <h4 class="font-semibold mb-2">Choose Level</h4>
-                        <p class="text-dim">Select your difficulty level</p>
-                    </div>
-                    <div>
-                        <i class="fas fa-th-large text-3xl mb-3 text-gray-400"></i>
-                        <h4 class="font-semibold mb-2">Select Module</h4>
-                        <p class="text-dim">Pick vocabulary, verbs, or expressions</p>
-                    </div>
-                    <div>
-                        <i class="fas fa-trophy text-3xl mb-3 text-gray-400"></i>
-                        <h4 class="font-semibold mb-2">Complete Quiz</h4>
-                        <p class="text-dim">Answer 10 questions and track progress</p>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div>
+                            <i class="fas fa-layer-group text-3xl mb-3 text-gray-400"></i>
+                            <h4 class="font-semibold mb-2">Choose Level</h4>
+                            <p class="text-dim">Select your difficulty level</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-th-large text-3xl mb-3 text-gray-400"></i>
+                            <h4 class="font-semibold mb-2">Select Module</h4>
+                            <p class="text-dim">Pick vocabulary, verbs, or expressions</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-trophy text-3xl mb-3 text-gray-400"></i>
+                            <h4 class="font-semibold mb-2">Complete Quiz</h4>
+                            <p class="text-dim">Answer 10 questions and track progress</p>
+                        </div>
                     </div>
                 </div>
             </div>
