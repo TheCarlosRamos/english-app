@@ -4,7 +4,6 @@ QuizCore.createGame([
   { en: "Good afternoon", pt: "Boa tarde" },
   { en: "Good evening", pt: "Boa noite" },
   { en: "Please", pt: "Por favor" },
-  { en: "Thank you", pt: "Obrigado" },
   { en: "You're welcome", pt: "De nada" },
   { en: "Excuse me", pt: "Com licença" },
   { en: "I'm sorry", pt: "Desculpa" },
