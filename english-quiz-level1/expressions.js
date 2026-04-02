@@ -8,5 +8,6 @@ QuizCore.createGame([
   { en: "You're welcome", pt: "De nada" },
   { en: "Excuse me", pt: "Com licença" },
   { en: "I'm sorry", pt: "Desculpa" },
-  { en: "See you later", pt: "Até mais" }
+  { en: "See you later", pt: "Até mais" },
+   { en: "Citizen", pt: "Cidadão" },
 ]);
