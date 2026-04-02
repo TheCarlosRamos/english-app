@@ -9,5 +9,6 @@ QuizCore.createGame([
   { en: "You're welcome", pt: "De nada" },
   { en: "Excuse me", pt: "Com licença" },
   { en: "I'm sorry", pt: "Desculpa" },
+  { en: "Maybe", pt: "Talvez" },
   { en: "See you later", pt: "Até mais" }
 ]);
