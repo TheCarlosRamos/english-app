@@ -12,5 +12,7 @@ QuizCore.createGame([
   { en: "Big", pt: "Grande" },
   { en: "Small", pt: "Pequeno" },
   { en: "Good", pt: "Bom" },
-  { en: "Bad", pt: "Ruim" }
+  { en: "Bad", pt: "Ruim" },
+  { en: "Hot", pt: "Quente" },
+{ en: "Cold", pt: "Frio" }
 ]);
