@@ -14,5 +14,15 @@ QuizCore.createGame([
   { en: "Good", pt: "Bom" },
   { en: "Bad", pt: "Ruim" },
   { en: "Hot", pt: "Quente" },
-{ en: "Cold", pt: "Frio" }
+  { en: "Late", pt: "Tarde" },
+  { en: "Early", pt: "Cedo" },
+  { en: "Here", pt: "Aqui" },
+  { en: "There", pt: "Lá" },
+  { en: "Now", pt: "Agora" },
+  { en: "Then", pt: "Então" },
+  { en: "Today", pt: "Hoje" },
+  { en: "Tomorrow", pt: "Amanhã" },
+  { en: "Yesterday", pt: "Ontem" },
+  { en: "Book", pt: "Livro" },
+  { en: "Cold", pt: "Frio" }
 ]);
