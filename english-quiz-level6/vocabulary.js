@@ -96,4 +96,6 @@ QuizCore.createGame([
         {"en": "Traits", "pt": "Características"},
         {"en": "Broad", "pt": "Amplo"},
         {"en": "Ever-increasingly", "pt": "Cada vez mais"},
+        {"en": "overwhelmed", "pt": "Sobrecarregado"},
+        {"en": "Rating", "pt": "Avaliação"},
         {"en": "Painstakingly", "pt": "Meticulosamente"}]); 
