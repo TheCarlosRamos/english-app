@@ -48,9 +48,9 @@
                     <i class="fas fa-arrow-left mr-2"></i>Back to Menu
                 </a>
                 <h1 class="text-2xl font-bold text-white">
-                    <i class="fas fa-comments mr-2"></i>Expressions Quiz
+                    <i class="fas fa-comments mr-2 text-yellow-400"></i>Expressions
                 </h1>
-                <div class="text-gray-300 font-semibold">
+                <div class="text-yellow-400 font-semibold">
                     Level 4
                 </div>
             </div>
@@ -59,12 +59,31 @@
 
     <div class="container mx-auto px-4 py-8">
         <!-- Start Screen -->
-        <div id="start" class="max-w-2xl mx-auto text-center">
-            <div class="bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl p-8 fade-in">
-                <i class="fas fa-comments text-6xl text-gray-400 mb-6"></i>
-                <h2 class="text-3xl font-bold text-white mb-4">Expressions Challenge</h2>
-                <p class="text-gray-400 mb-8">Test your knowledge of English expressions and their Portuguese translations</p>
-                <button id="begin" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+        <div id="start" class="max-w-2xl mx-auto text-center fade-in">
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                <i class="fas fa-comments text-6xl text-yellow-400 mb-6"></i>
+                <h2 class="text-3xl font-bold text-white mb-4">Expressions Quiz</h2>
+                <p class="text-gray-400 mb-8">Strengthen your understanding of intermediate English expressions. Choose the correct Portuguese translation for each English expressions.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8 text-left">
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="font-semibold text-yellow-400 mb-2">Quiz Details</h3>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>10 questions</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Multiple choice</li>
+                            <li><i class="fas fa-check-circle mr-2 text-green-400"></i>Instant feedback</li>
+                        </ul>
+                </div>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="font-semibold text-yellow-400 mb-2">What You'll Learn</h3>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li><i class="fas fa-comment-dots mr-2 text-green-600"></i>Natural expressions</li>
+                            <li><i class="fas fa-users mr-2 text-green-600"></i>Real conversations</li>
+                            <li><i class="fas fa-microphone mr-2 text-green-600"></i>Fluent speaking</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button id="begin" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     <i class="fas fa-play mr-2"></i>Start Quiz
                 </button>
             </div>
@@ -76,11 +95,11 @@
                 <!-- Progress Bar -->
                 <div class="mb-6">
                     <div class="flex justify-between items-center mb-2">
-                        <span class="text-sm font-medium text-gray-400">Question <span id="current-question">1</span> of 10</span>
+                        <span class="text-sm font-medium text-gray-400">Question <span id="current-question" class="text-white font-bold">1</span> of 10</span>
                         <span class="text-sm font-medium text-gray-400">Score: <span id="score" class="text-white font-bold">0</span></span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div id="progress-bar" class="bg-gray-500 h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
+                        <div id="progress-bar" class="bg-yellow-500 h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
                     </div>
                 </div>
 
