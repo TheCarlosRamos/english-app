@@ -1,7 +1,7 @@
 (function(){
   function shuffle(a){return a.sort(()=>Math.random()-0.5)}
   function createGame(DATA){
-    const TOTAL=10; let score=0,idx=0,rounds=[],startTime;
+    const TOTAL=10; let score=0,idx=0,rounds=[],startTime, streak=0;
     const start=document.getElementById('start');
     const quiz=document.getElementById('quiz');
     const end=document.getElementById('end');
@@ -11,11 +11,26 @@
     const btn=document.getElementById('next');
     const progressBar=document.getElementById('progress-bar');
     const currentQuestionEl=document.getElementById('current-question');
+    const streakEl=document.getElementById('streak');
+    const streakCountEl=document.getElementById('streak-count');
 
     document.getElementById('begin').onclick=()=>{
       rounds=shuffle(DATA).slice(0,TOTAL);
       startTime = Date.now();
+      streak=0; updateStreak();
       start.style.display='none'; quiz.style.display='block'; render();
+    }
+
+    function updateStreak(){
+      if(streak>=2){
+        streakCountEl.textContent=streak;
+        streakEl.classList.remove('hidden');
+        streakEl.classList.remove('pop');
+        void streakEl.offsetWidth; // reinicia a animação
+        streakEl.classList.add('pop');
+      } else {
+        streakEl.classList.add('hidden');
+      }
     }
 
     function render(){
@@ -46,7 +61,11 @@
         div.classList.remove('border-gray-600');
         div.classList.add('correct', 'border-green-500');
         score++;
+        streak++;
+        updateStreak();
       } else {
+        streak=0;
+        updateStreak();
         div.classList.remove('border-gray-600');
         div.classList.add('incorrect', 'border-red-500');
         // Show correct answer
