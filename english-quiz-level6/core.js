@@ -51,6 +51,21 @@
         div.onclick=()=>select(div,o);
         choices.appendChild(div);
       })
+
+      const speakBtn=document.createElement('button');
+      speakBtn.innerHTML='🔊';
+      speakBtn.style.cssText='margin-left:10px;font-size:1.2em;cursor:pointer;background:none;border:none;';
+      speakBtn.onclick=()=>speak(rounds[idx].en);
+      term.appendChild(speakBtn);
+      speak(rounds[idx].en);
+    }
+
+    function speak(text){
+      if(!('speechSynthesis' in window)) return;
+      speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
     }
 
     function select(div,val){
