@@ -1,7 +1,7 @@
 (function(){
   function shuffle(a){return a.sort(()=>Math.random()-0.5)}
   function createGame(DATA){
-    const TOTAL=10; let score=0,idx=0,rounds=[],startTime, streak=0;
+    const TOTAL=10; let score=0,idx=0,rounds=[],startTime, streak=0, wrongAnswers=[];
     const start=document.getElementById('start');
     const quiz=document.getElementById('quiz');
     const end=document.getElementById('end');
@@ -13,11 +13,13 @@
     const currentQuestionEl=document.getElementById('current-question');
     const streakEl=document.getElementById('streak');
     const streakCountEl=document.getElementById('streak-count');
+    const reviewEl=document.getElementById('review');
 
     document.getElementById('begin').onclick=()=>{
       rounds=shuffle(DATA).slice(0,TOTAL);
       startTime = Date.now();
       streak=0; updateStreak();
+      wrongAnswers=[];
       start.style.display='none'; quiz.style.display='block'; render();
     }
 
@@ -66,6 +68,7 @@
       } else {
         streak=0;
         updateStreak();
+        wrongAnswers.push({en: rounds[idx].en, correct: rounds[idx].pt});
         div.classList.remove('border-gray-600');
         div.classList.add('incorrect', 'border-red-500');
         // Show correct answer
@@ -103,6 +106,14 @@
         document.getElementById('final').textContent=score+'/'+TOTAL;
         document.getElementById('time').textContent=formattedTime;
         document.getElementById('message').textContent=message;
+        if(reviewEl){
+          if(wrongAnswers.length>0){
+            reviewEl.innerHTML='<h3 class="text-lg font-bold text-white mb-3">Review this:</h3>'+
+              wrongAnswers.map(w=>'<div class="bg-gray-800 rounded-lg p-3 mb-2 flex justify-between"><span class="text-gray-300">'+w.en+'</span><span class="text-green-400 font-semibold">'+w.correct+'</span></div>').join('');
+          } else {
+            reviewEl.innerHTML='';
+          }
+        }
       } else {
         render();
       }
