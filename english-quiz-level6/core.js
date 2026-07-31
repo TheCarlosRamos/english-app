@@ -2,7 +2,7 @@
 (function(){
   function shuffle(a){return a.sort(()=>Math.random()-0.5)}
   function createGame(DATA){
-    const TOTAL=10; let score=0,idx=0,rounds=[];
+    const TOTAL=10; let score=0,idx=0,rounds=[],startTime;
     const start=document.getElementById('start');
     const quiz=document.getElementById('quiz');
     const end=document.getElementById('end');
@@ -15,6 +15,7 @@
 
     document.getElementById('begin').onclick=()=>{
       rounds=shuffle(DATA).slice(0,TOTAL);
+      startTime = Date.now();
       start.style.display='none'; quiz.style.display='block'; render();
     }
 
@@ -64,9 +65,26 @@
     btn.onclick=()=>{
       idx++; 
       if(idx>=rounds.length){
-        quiz.style.display='none'; 
-        end.style.display='block'; 
+        const endTime=Date.now();
+        const elapsedSeconds=Math.floor((endTime-startTime)/1000);
+        const minutes=Math.floor(elapsedSeconds/60);
+        const seconds=elapsedSeconds%60;
+        const formattedTime=`${minutes}:${seconds.toString().padStart(2,'0')}`;
+        let message;
+        if (score===10) {
+          message="Perfect!";
+        } else if (score>=8) {
+          message="Excellent!";
+        } else if (score>=6) {
+          message = "Good job!";
+        } else {
+          message="Keep practicing!";
+        }
+        quiz.style.display='none';
+        end.style.display='block';
         document.getElementById('final').textContent=score+'/'+TOTAL;
+        document.getElementById('time').textContent=formattedTime;
+        document.getElementById('message').textContent=message;
       } else {
         render();
       }
